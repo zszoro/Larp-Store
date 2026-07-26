@@ -1,7 +1,16 @@
 # Larp Store
 
-Loja digital responsiva em tema verde, inspirada na estrutura visual indicada pelo cliente.
+Loja digital responsiva em tema verde, com catálogo, busca, carrinho, cupom e FAQ.
 
 ## Executar
 
-Abra `index.html` ou sirva esta pasta com qualquer servidor estático.
+```bash
+npm install
+npm run dev
+```
+
+Para gerar a versão de produção:
+
+```bash
+npm run build
+```
