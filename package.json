@@ -1,0 +1,19 @@
+{
+  "name": "larp-store",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vinext dev",
+    "build": "vinext build && node scripts/prepare-sites.mjs",
+    "preview": "vinext preview"
+  },
+  "dependencies": {
+    "next": "^15.4.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "vinext": "1.0.0-beta.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-rsc": "^0.5.30"
+  }
+}

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Larp Store — produtos digitais com entrega rápida e segura.">
+  <title>Larp Store | Produtos Digitais</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topline">⚡ Entrega automática • Pagamento seguro • Suporte todos os dias</div>
+  <header>
+    <button class="icon-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+    <a class="brand" href="#"><span>L</span>LARP STORE</a>
+    <label class="search"><span>⌕</span><input id="search" placeholder="Buscar produto" aria-label="Buscar produto"></label>
+    <nav><a href="#catalogo">Catálogo</a><a href="#faq">Ajuda</a></nav>
+    <button class="pill">Entrar</button><button class="cart" id="cartBtn">🛒 <b id="cartCount">0</b></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">A SUA LOJA DIGITAL</span>
+        <h1>Mais diversão.<br><em>Menos espera.</em></h1>
+        <p>Assinaturas, créditos e itens digitais com entrega rápida, segura e suporte de verdade.</p>
+        <div class="actions"><a class="cta" href="#catalogo">Explorar produtos →</a><a class="ghost" href="#faq">Como funciona?</a></div>
+      </div>
+      <div class="hero-art" aria-label="Seleção de produtos digitais">
+        <img src="assets/assinaturas.png" alt="Assinaturas digitais"><img src="assets/blox.png" alt="Blox Fruits">
+        <img src="assets/discord-cat.png" alt="Discord"><img src="assets/jogos.png" alt="Jogos">
+      </div>
+    </section>
+
+    <section class="metrics">
+      <div><strong>3.794+</strong><span>vendas realizadas</span></div>
+      <div><strong>4.9 ★</strong><span>avaliação dos clientes</span></div>
+      <div><strong>24/7</strong><span>suporte disponível</span></div>
+      <div><strong>⚡</strong><span>entrega automática</span></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><span class="eyebrow">ENCONTRE O QUE PROCURA</span><h2>Categorias populares</h2></div><div class="arrows">‹ &nbsp; ›</div></div>
+      <div class="categories">
+        <a href="#catalogo"><img src="assets/assinaturas.png" alt=""><b>Assinaturas</b><span>Netflix, Spotify e mais</span></a>
+        <a href="#catalogo"><img src="assets/blox.png" alt=""><b>Blox Fruits</b><span>Frutas, passes e contas</span></a>
+        <a href="#catalogo"><img src="assets/discord-cat.png" alt=""><b>Discord</b><span>Nitro e impulsos</span></a>
+        <a href="#catalogo"><img src="assets/robux.png" alt=""><b>Robux</b><span>Créditos e gift cards</span></a>
+        <a href="#catalogo"><img src="assets/metodos.png" alt=""><b>Métodos</b><span>Conteúdo exclusivo</span></a>
+        <a href="#catalogo"><img src="assets/jogos.png" alt=""><b>Jogos</b><span>Keys e gamepasses</span></a>
+      </div>
+    </section>
+
+    <section class="section" id="catalogo">
+      <div class="section-head"><div><span class="eyebrow">ESCOLHAS DA COMUNIDADE</span><h2>Produtos em destaque</h2></div><button class="filter active" data-filter="Todos">Todos</button></div>
+      <div class="products">
+        <article data-name="Netflix Assinatura"><div class="product-img"><img src="assets/netflix.jpg" alt="Netflix"><span>DESTAQUE</span></div><small>ASSINATURAS</small><h3>Netflix Premium</h3><p>Acesso imediato em perfil privado.</p><footer><b>A partir de R$ 14,90</b><button class="buy" aria-label="Adicionar Netflix">+</button></footer></article>
+        <article data-name="Minecraft Jogo"><div class="product-img"><img src="assets/minecraft.jpeg" alt="Minecraft"><span>POPULAR</span></div><small>JOGOS</small><h3>Minecraft</h3><p>Conta completa para começar agora.</p><footer><b>A partir de R$ 29,90</b><button class="buy" aria-label="Adicionar Minecraft">+</button></footer></article>
+        <article data-name="Discord Impulsos Nitro"><div class="product-img"><img src="assets/discord.png" alt="Discord"><span>ENTREGA RÁPIDA</span></div><small>DISCORD</small><h3>Impulsos Discord</h3><p>Mais benefícios para seu servidor.</p><footer><b>A partir de R$ 9,90</b><button class="buy" aria-label="Adicionar Discord">+</button></footer></article>
+      </div>
+    </section>
+
+    <section class="promo">
+      <div><span class="eyebrow">OFERTA DE BOAS-VINDAS</span><h2>10% OFF na primeira compra</h2><p>Use o cupom abaixo no checkout e aproveite.</p></div>
+      <button id="coupon" title="Copiar cupom">BEMVINDO10 <span>⧉</span></button>
+    </section>
+
+    <section class="section trust">
+      <div><i>🔒</i><h3>Pagamento seguro</h3><p>Transações protegidas via Pix e meios oficiais.</p></div>
+      <div><i>⚡</i><h3>Entrega garantida</h3><p>Receba seus produtos digitais em poucos minutos.</p></div>
+      <div><i>💬</i><h3>Suporte humanizado</h3><p>Uma equipe pronta para ajudar antes e depois da compra.</p></div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <span class="eyebrow">TIRE SUAS DÚVIDAS</span><h2>Perguntas frequentes</h2>
+      <details><summary>Como posso fazer um pedido?<b>+</b></summary><p>Escolha o produto, adicione ao carrinho e finalize o pagamento. As instruções aparecem na tela.</p></details>
+      <details><summary>Qual é o prazo de entrega?<b>+</b></summary><p>A maioria dos produtos tem entrega automática após a confirmação do pagamento.</p></details>
+      <details><summary>Como funciona o suporte?<b>+</b></summary><p>Fale com nossa equipe pelo botão de suporte. Atendemos todos os dias.</p></details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><a class="brand" href="#"><span>L</span>LARP STORE</a><p>Seu universo digital, com segurança e velocidade.</p></div>
+    <div><b>Loja</b><a href="#catalogo">Produtos</a><a href="#catalogo">Categorias</a><a href="#faq">Perguntas</a></div>
+    <div><b>Informações</b><a href="#">Termos de uso</a><a href="#">Privacidade</a><a href="#">Atendimento</a></div>
+    <div><b>Receba novidades</b><p>Ofertas e lançamentos no seu e-mail.</p><label class="newsletter"><input placeholder="seu@email.com"><button>→</button></label></div>
+    <p class="copyright">© 2026 Larp Store. Todos os direitos reservados.</p>
+  </footer>
+
+  <aside id="drawer"><button id="closeMenu">×</button><h3>Menu</h3><a href="#catalogo">Produtos</a><a href="#faq">Ajuda</a><a href="#">Entrar</a></aside>
+  <div id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>

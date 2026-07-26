@@ -1,0 +1,10 @@
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const toast=message=>{const el=$('#toast');el.textContent=message;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1800)};
+$('#menuBtn').onclick=()=>$('#drawer').classList.add('open');
+$('#closeMenu').onclick=()=>$('#drawer').classList.remove('open');
+$$('#drawer a').forEach(a=>a.onclick=()=>$('#drawer').classList.remove('open'));
+let cart=0;
+$$('.buy').forEach(button=>button.onclick=()=>{cart++;$('#cartCount').textContent=cart;toast('Produto adicionado ao carrinho')});
+$('#cartBtn').onclick=()=>toast(cart?`${cart} item(ns) no carrinho`:'Seu carrinho está vazio');
+$('#coupon').onclick=async()=>{try{await navigator.clipboard.writeText('BEMVINDO10')}catch{}toast('Cupom BEMVINDO10 copiado!')};
+$('#search').addEventListener('input',e=>{const term=e.target.value.toLowerCase();$$('.products article').forEach(card=>card.classList.toggle('hidden',!card.dataset.name.toLowerCase().includes(term)))});
