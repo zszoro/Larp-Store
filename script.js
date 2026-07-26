@@ -1,10 +1,22 @@
 const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
 const toast=message=>{const el=$('#toast');el.textContent=message;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1800)};
+const products=window.LARP_PRODUCTS||[];
+const productGrid=$('.products');
+const renderProducts=(category='Todos',term='')=>{
+  const visible=products.filter(([cat,name])=>(category==='Todos'||cat===category)&&name.toLowerCase().includes(term.toLowerCase()));
+  productGrid.innerHTML=visible.map(([cat,name,price,image])=>`<article data-name="${name.replaceAll('"','&quot;')}"><div class="product-img"><img src="${image}" alt="${name}" loading="lazy"><span>ENTREGA DIGITAL</span></div><small>${cat.toUpperCase()}</small><h3>${name}</h3><p>Produto digital com suporte da Larp Store.</p><footer><b>A partir de ${price}</b><button class="buy" aria-label="Adicionar ${name}">+</button></footer></article>`).join('');
+  productGrid.querySelectorAll('.buy').forEach(button=>button.onclick=()=>{cart++;$('#cartCount').textContent=cart;toast('Produto adicionado ao carrinho')});
+  if(!visible.length) productGrid.innerHTML='<p class="empty">Nenhum produto encontrado.</p>';
+};
+const categories=['Todos',...new Set(products.map(p=>p[0]))];
+let activeCategory='Todos';
+$('#filters').innerHTML=categories.map(cat=>`<button class="filter${cat==='Todos'?' active':''}" data-filter="${cat}">${cat}</button>`).join('');
+$('#filters').addEventListener('click',event=>{const button=event.target.closest('.filter');if(!button)return;activeCategory=button.dataset.filter;$$('.filter').forEach(item=>item.classList.toggle('active',item===button));renderProducts(activeCategory,$('#search').value)});
 $('#menuBtn').onclick=()=>$('#drawer').classList.add('open');
 $('#closeMenu').onclick=()=>$('#drawer').classList.remove('open');
 $$('#drawer a').forEach(a=>a.onclick=()=>$('#drawer').classList.remove('open'));
 let cart=0;
-$$('.buy').forEach(button=>button.onclick=()=>{cart++;$('#cartCount').textContent=cart;toast('Produto adicionado ao carrinho')});
 $('#cartBtn').onclick=()=>toast(cart?`${cart} item(ns) no carrinho`:'Seu carrinho está vazio');
 $('#coupon').onclick=async()=>{try{await navigator.clipboard.writeText('BEMVINDO10')}catch{}toast('Cupom BEMVINDO10 copiado!')};
-$('#search').addEventListener('input',e=>{const term=e.target.value.toLowerCase();$$('.products article').forEach(card=>card.classList.toggle('hidden',!card.dataset.name.toLowerCase().includes(term)))});
+$('#search').addEventListener('input',e=>renderProducts(activeCategory,e.target.value));
+renderProducts();
